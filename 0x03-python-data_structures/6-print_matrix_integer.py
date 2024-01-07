@@ -1,12 +1,16 @@
 #!/usr/bin/python3
 
-def print_matrix_integer(matrix=None):
+def print_matrix_integer(matrix=[[]]):
+    #python function
     if not matrix:
         print()
     else:
-        for row in matrix:
-            for i, item in enumerate(row):
-                end_char = ' $' if i != len(row) - 1 else '$\n'
-                print("{:d}".format(item), end=end_char)
-                print()
+        for row in range(len(matrix)):
+            for item in range(len(matrix[row])):
+                if item != len(matrix[row]) - 1:
+                    endspace = ''
+                else:
+                    endspace = "
+                    print("{:d}".format(matrix[row][item]), end=endspace)
+                    print()
 
